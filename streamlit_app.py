@@ -20,16 +20,14 @@ session= cnx.session()
 #    ("Banana", "Strawberries", "Peaches"))
 #st.write("My favorite fruit is :", option)
 
-
 name_on_order= st.text_input('Name on smoothie:')
 st.write('The name on your Smoothie will be:',name_on_order)
-
 
 #session = get_active_session()
 #my_dataframe = session.table("smoothies.public.fruit_options").select (col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
-my_dataframe=session.table("SMOOTHIES.PUBLIC.FRUIT_OPTIONS").select(col('FRUIT_NAME'),col(SERCH_ON))
+my_dataframe=session.table("SMOOTHIES.PUBLIC.FRUIT_OPTIONS").select(col('FRUIT_NAME'),col('SERCH_ON'))
 st.dataframe(data=my_dataframe, use_container_width=true)
 st.stop()
 
